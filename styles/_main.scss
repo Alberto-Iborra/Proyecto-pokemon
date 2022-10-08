@@ -65,3 +65,31 @@
 .b-poke-header__box__button{
     margin-top: 10px;
 }
+.b-winner-box{
+    width: 60%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.b-winner-box__champion{
+    width: 100%;
+    height: auto;
+}
+.b-winner-box__pokemon{
+    width: 40%;
+    height: auto;
+}
+.b-winner-box__p{
+    font-family:'Seymour One', sans-serif;
+    color: #d61708;
+    font-size: 20px;
+    margin-top: 0px;
+}
+.b-winner-box__btn{
+    color: #fecc02;
+    border-radius: 10px;
+    background-color: #2a6fb7;
+    font-family:'Seymour One', sans-serif;
+}

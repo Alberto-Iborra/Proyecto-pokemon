@@ -46,20 +46,81 @@ const printCard = (pokemon) => {
         divBoxGalery$$.appendChild(figthBtn$$)
         divGalery$$.appendChild(divBoxGalery$$)
         const img$$Name = img$$.className
-
         figthBtn$$.addEventListener('click',()=>figth(img$$Name))
            
     
   }
-
-
-const attacks = (a,b)=>{let attack1 = Math.random()*(a.stats[1].base_stat-1)+1;
-  b.stats[0].base_stat = b.stats[0].base_stat + b.stats[2].base_stat - attack1
-  if(a.stats[0].base_stat<0||b.stats[0].base_stat<0){if(a.stats[0].base_stat<0){console.log(b.name + 'winner')}else{console.log(a.name + 'winner')}}
-      else {attacks(b,a)
-      }}
+function reload() {
+    filterPokemons.splice(0,151)
+    pokemonBHP=0
+    pokemonAHP=0
+    myfilterNewPokemons.splice(0,2);
+    figthers.splice(0,2);
+    divGalery$$.innerHTML='';
+    init()  
+  }  
+let pokemonBHP = 0
+const attacks = (a,b)=>{let attack = Math.floor(Math.random()*(a.stats[1].base_stat))+1;
+  let result = pokemonBHP + b.stats[0].base_stat - attack
+  if(result<0){
+    const winnerDiv$$ = document.createElement('div')
+    winnerDiv$$.classList.add('b-winner-box')
+    const winnerPokImg$$ = document.createElement('img')
+    winnerPokImg$$.setAttribute('src',a.sprites.versions['generation-v']['black-white'].animated.front_default)
+    winnerPokImg$$.classList.add('b-winner-box__pokemon')
+    const winnerImg$$ = document.createElement('img')
+    winnerImg$$.setAttribute('src','/assets/Pokemon_champions (1).png')
+    winnerImg$$.classList.add('b-winner-box__champion')
+    const winnerP$$ = document.createElement('p')
+    winnerP$$.classList.add('b-winner-box__p')
+    winnerP$$.textContent=a.name
+    const btnReload$$ =document.createElement('button')
+    btnReload$$.textContent='Reload'
+    btnReload$$.classList.add('b-winner-box__btn')
+    winnerDiv$$.appendChild(winnerPokImg$$)
+    winnerDiv$$.appendChild(winnerImg$$)
+    winnerDiv$$.appendChild(winnerP$$)
+    winnerDiv$$.appendChild(btnReload$$)
+    divGalery$$.appendChild(winnerDiv$$)
+    btnReload$$.addEventListener('click',()=>reload())
+    //console.log(a.name + 'winner')
+  }
+      else {pokemonBHP = result - b.stats[0].base_stat;
+        attacks2(b,a)
+        }
+      }
+let pokemonAHP=0     
+const attacks2 = (b,a)=>{let attack2 = Math.floor(Math.random()*(b.stats[1].base_stat))+1;
+  let result2 = pokemonAHP + a.stats[0].base_stat - attack2
+  if (result2<0) {
+    const winnerDiv$$ = document.createElement('div')
+    winnerDiv$$.classList.add('b-winner-box')
+    const winnerPokImg$$ = document.createElement('img')
+    winnerPokImg$$.setAttribute('src',b.sprites.versions['generation-v']['black-white'].animated.front_default)
+    winnerPokImg$$.classList.add('b-winner-box__pokemon')
+    const winnerImg$$ = document.createElement('img')
+    winnerImg$$.setAttribute('src','/assets/Pokemon_champions (1).png')
+    winnerImg$$.classList.add('b-winner-box__champion')
+    const winnerP$$ = document.createElement('p')
+    winnerP$$.classList.add('b-winner-box__p')
+    winnerP$$.textContent=b.name
+    const btnReload$$ =document.createElement('button')
+    btnReload$$.textContent='Reload'
+    btnReload$$.classList.add('b-winner-box__btn')
+    winnerDiv$$.appendChild(winnerPokImg$$)
+    winnerDiv$$.appendChild(winnerImg$$)
+    winnerDiv$$.appendChild(winnerP$$)
+    winnerDiv$$.appendChild(btnReload$$)
+    divGalery$$.appendChild(winnerDiv$$)
+    btnReload$$.addEventListener('click',()=>reload())
+    //console.log(b.name + 'winner')
+  } else 
+  { pokemonAHP = result2 - a.stats[0].base_stat
+    attacks(a,b)}
+}
+let myfilterNewPokemons=[]    
 function figth (img$$Name){ 
-  const myfilterNewPokemons = filterPokemons.filter((filterPokemon)=>filterPokemon.name.toLowerCase().includes(img$$Name.toLowerCase()));
+  myfilterNewPokemons = filterPokemons.filter((filterPokemon)=>filterPokemon.name.toLowerCase().includes(img$$Name.toLowerCase()));
   console.log(myfilterNewPokemons);
   for (let index = 0; index < myfilterNewPokemons.length; index++) {
     const element = myfilterNewPokemons[index];
@@ -67,6 +128,7 @@ function figth (img$$Name){
       figthers.push(element); counter++}
       else if(counter === 1){
         figthers.push(element)
+        counter--
         divGalery$$.innerHTML=''
         console.log(counter)
         console.log(figthers)

@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Seymour+One&display=swap");
+.b-body {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+}
+
+.b-body__main {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.b-body__main__poke-galery {
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.b-cursorPokebal {
+  cursor: pointer;
+}
+
+.b-body__main__poke-galery__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 150px;
+  height: 213px;
+  margin: 6px;
+  background-image: url(assets/card-fuego.jpeg);
+  background-size: 150px;
+  border-radius: 10px;
+  box-shadow: 40px;
+}
+
+.b-body__main__poke-galery__box__divImg {
+  width: auto;
+  height: 70px;
+  margin-top: 30px;
+}
+
+.b-body__main__poke-galery__box__divP {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+  color: palegoldenrod;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.b-body__main__poke-galery__box__p {
+  font-family: "Seymour One", sans-serif;
+  font-size: 12px;
+  color: #47fefc;
+  text-shadow: 0px 2px 5px #0000db;
+  margin-top: 0px;
+}
+
+.b-body__main__poke-galery__box__btn {
+  margin-bottom: 10px;
+  border-radius: 30px;
+  font-family: "Seymour One", sans-serif;
+  font-weight: lighter;
+  background-color: #4242bf;
+  color: #ffffff;
+}
+
+.b-poke-header__box__button {
+  margin-top: 10px;
+}
+
+.b-poke-header {
+  padding-top: 20px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.b-poke-header__catch {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 60px;
+  align-items: center;
+  width: 95%;
+  position: fixed;
+}
+
+.b-poke-header__pokeball {
+  width: 40px;
+  height: auto;
+  margin-left: 40px;
+}
+
+.b-poke-header__pokedex {
+  width: 90px;
+  height: auto;
+}
+
+.b-poke-header__contador {
+  position: relative;
+}
+
+.b-poke-header__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  width: 60%;
+}
+
+.b-poke-header__box__img1 {
+  height: auto;
+  width: 40%;
+}
+
+.b-poke-header__box__img2 {
+  height: auto;
+  width: 80%;
+}
+
+.b-poke-header__box__input {
+  margin-top: 30px;
+  height: auto;
+  width: 75%;
+}/*# sourceMappingURL=styles.css.map */

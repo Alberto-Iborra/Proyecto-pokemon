@@ -1,0 +1,50 @@
+.b-poke-header{
+    padding-top: 20px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.b-poke-header__catch{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 60px;
+    align-items: center;
+    width: 95%;
+    position: fixed;
+} 
+.b-poke-header__pokeball{
+    width: 40px;
+    height: auto;
+    margin-left: 40px;
+}
+.b-poke-header__pokedex{
+    width: 90px;
+    height: auto;
+}
+.b-poke-header__contador{
+    position: relative;
+}
+.b-poke-header__box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    width: 60%;
+}
+
+.b-poke-header__box__img1{
+    height: auto;
+    width: 40%;  
+}
+.b-poke-header__box__img2{
+    height: auto;
+    width: 80%;  
+}
+.b-poke-header__box__input{
+    margin-top: 30px;
+    height: auto;
+    width: 75%;  
+}

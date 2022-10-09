@@ -15,7 +15,7 @@ const divGalery$$ = document.querySelector('.b-body__main__poke-galery');
 const printCard = (pokemon) => {
         //console.log(pokemon)
         const divBoxGalery$$ = document.createElement('div')
-        divBoxGalery$$.classList.add('b-body__main__poke-galery__box')
+        divBoxGalery$$.classList.add('b-body__main__poke-galery__box', 'b-body__main__poke-galery__box--size')
         divBoxGalery$$.setAttribute('data-aos',"flip-down")
         const ballImg$$ = document.createElement('img')
         ballImg$$.setAttribute('src','/assets/pokeball2.png')
@@ -26,13 +26,13 @@ const printCard = (pokemon) => {
         img$$.classList.add(pokemon.name)
         divImg$$.classList.add('b-body__main__poke-galery__box__divImg', pokemon.name)
         const divP$$ = document.createElement('div')
-        divP$$.classList.add('b-body__main__poke-galery__box__divP', pokemon.name)
+        divP$$.classList.add('b-body__main__poke-galery__box__divP', pokemon.name,'b-body__main__poke-galery__box__divP--color')
         const p$$ = document.createElement('p')
-        p$$.classList.add('b-body__main__poke-galery__box__p', pokemon.name)
+        p$$.classList.add('b-body__main__poke-galery__box__p', pokemon.name,'b-body__main__poke-galery__box__p--size')
         p$$.textContent = pokemon.name.toUpperCase()
         const figthBtn$$ = document.createElement('button')
         figthBtn$$.textContent ='Figth'
-        figthBtn$$.classList.add('b-body__main__poke-galery__box__btn',pokemon.name)
+        figthBtn$$.classList.add('b-body__main__poke-galery__box__btn',pokemon.name,'b-body__main__poke-galery__box__btn-size')
         const pHP$$ = document.createElement('p')
         pHP$$.textContent ='HP'+ pokemon.stats[0].base_stat
         const pPD$$ = document.createElement('p')

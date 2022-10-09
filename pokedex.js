@@ -201,6 +201,31 @@ function hunt(img$$Name) {
     console.log(HuntPokemons)
 }
 }
+const pokedex$$ = document.querySelector('.b-poke-header__pokedex')
+pokedex$$.addEventListener('click',()=>myPokedex())
+const divbtn$$ = document.querySelector('.b-poke-header__div-btn');
+function reload2() {
+  filterPokemons.splice(0,151)
+  pokemonBHP=0
+  pokemonAHP=0
+  myfilterNewPokemons.splice(0,2);
+  figthers.splice(0,2);
+  divbtn$$.innerHTML='';
+  divGalery$$.innerHTML='';
+  init()  
+}  
+const myPokedex = ()=>{
+  divGalery$$.innerHTML=''
+  for (let index = 0; index < HuntPokemons.length; index++) {
+    const HuntPokemon = HuntPokemons[index];
+    printCard(HuntPokemon)}
+    const btnReturn$$ =document.createElement('button')
+    btnReturn$$.textContent='Return'
+    btnReturn$$.classList.add('b-winner-box__btn2')
+    //const pokedexHeader$$ = document.querySelector('.b-poke-header__box')
+    divbtn$$.appendChild(btnReturn$$)
+    btnReturn$$.addEventListener('click',()=>reload2())
+}
 
 init()
 

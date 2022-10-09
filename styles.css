@@ -154,9 +154,13 @@
     height: 290px;
     background-size: cover;
   }
-  .b-body__main__poke-galery__box--size img {
+  .b-body__main__poke-galery__box__divImg--size {
     margin-top: 30px;
-    height: 70px;
+    height: 100px;
+  }
+  .b-body__main__poke-galery__box__divImg--size img {
+    height: 80px;
+    width: auto;
   }
   .b-body__main__poke-galery__box__p--size {
     font-size: 18px;
@@ -172,6 +176,25 @@
     height: 30px;
     font-size: 15px;
   }
+  .b-poke-header__catch--size {
+    height: 100px;
+  }
+  .b-poke-header__catch--size img {
+    height: 100px;
+    width: auto;
+  }
+  .b-body__main__poke-galery__box__divImg--size {
+    margin-top: 30px;
+    margin-bottom: -20px;
+    height: 100px;
+  }
+  .b-body__main__poke-galery__box__divImg--size img {
+    height: 80px;
+    width: auto;
+  }
+  .b-poke-header__catch--position {
+    margin-top: 400px;
+  }
 }
 @media (min-width: 1200px) {
   .b-body__main__poke-galery__box--size {
@@ -183,6 +206,7 @@
   .b-body__main__poke-galery__box--size img {
     margin-top: 30px;
     height: 100px;
+    width: auto;
   }
   .b-body__main__poke-galery__box__p--size {
     font-size: 25px;
@@ -195,6 +219,25 @@
     width: 150px;
     height: 50px;
     font-size: 25px;
+  }
+  .b-poke-header__catch--size {
+    height: 100px;
+  }
+  .b-poke-header__catch--size img {
+    height: 100px;
+    width: auto;
+  }
+  .b-body__main__poke-galery__box__divImg--size {
+    margin-top: 30px;
+    margin-bottom: -20px;
+    height: 100px;
+  }
+  .b-body__main__poke-galery__box__divImg--size img {
+    height: 100px;
+    width: auto;
+  }
+  .b-poke-header__catch--position {
+    margin-top: 500px;
   }
 }
 .b-poke-header {
@@ -234,8 +277,8 @@
   font-family: "Seymour One", sans-serif;
   color: #fecc02;
   position: absolute;
-  top: -10px;
-  right: 100px;
+  top: -5px;
+  right: 120px;
 }
 
 .b-poke-header__contador {

@@ -24,7 +24,7 @@ const printCard = (pokemon) => {
         const img$$ = document.createElement('img')
         img$$.setAttribute('src',pokemon.sprites.versions['generation-v']['black-white'].animated.front_default)
         img$$.classList.add(pokemon.name)
-        divImg$$.classList.add('b-body__main__poke-galery__box__divImg', pokemon.name)
+        divImg$$.classList.add('b-body__main__poke-galery__box__divImg', pokemon.name,'b-body__main__poke-galery__box__divImg--size')
         const divP$$ = document.createElement('div')
         divP$$.classList.add('b-body__main__poke-galery__box__divP', pokemon.name,'b-body__main__poke-galery__box__divP--color')
         const p$$ = document.createElement('p')

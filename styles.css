@@ -5,7 +5,8 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  position: absolute;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .b-body__main {
@@ -13,15 +14,21 @@
   height: auto;
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .b-body__main__poke-galery {
   margin-top: 30px;
+  margin-left: 20px;
   width: 100%;
   height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .b-cursorPokebal {
@@ -42,10 +49,21 @@
   box-shadow: 40px;
 }
 
+.b-body__main__poke-galery__box--background {
+  background-image: url(assets/pokeball2.png);
+}
+
 .b-body__main__poke-galery__box__divImg {
   width: auto;
   height: 70px;
-  margin-top: 30px;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.b-body__main__poke-galery__box__divImg--none {
+  display: none;
 }
 
 .b-body__main__poke-galery__box__divP {
@@ -56,6 +74,10 @@
   color: palegoldenrod;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.b-body__main__poke-galery__box__divP {
+  display: none;
 }
 
 .b-body__main__poke-galery__box__p {
@@ -86,6 +108,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 .b-winner-box__champion {
@@ -112,6 +135,15 @@
   font-family: "Seymour One", sans-serif;
 }
 
+.b-body__main__poke-galery__box__ball {
+  width: 20%;
+  display: none;
+}
+
+.b-body__main__poke-galery__box__ball--flex {
+  display: flex;
+}
+
 .b-poke-header {
   padding-top: 20px;
   height: auto;
@@ -127,6 +159,10 @@
   padding: 0px 60px;
   align-items: center;
   width: 95%;
+  position: absolute;
+}
+
+.b-poke-header__catch--fixed {
   position: fixed;
 }
 
@@ -141,11 +177,20 @@
   height: auto;
 }
 
+.b-poke-header__pokedex__counter {
+  font-family: "Seymour One", sans-serif;
+  color: #fecc02;
+  position: absolute;
+  top: -10px;
+  right: 100px;
+}
+
 .b-poke-header__contador {
   position: relative;
 }
 
 .b-poke-header__box {
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -17,19 +17,22 @@ const printCard = (pokemon) => {
         const divBoxGalery$$ = document.createElement('div')
         divBoxGalery$$.classList.add('b-body__main__poke-galery__box')
         divBoxGalery$$.setAttribute('data-aos',"flip-down")
+        const ballImg$$ = document.createElement('img')
+        ballImg$$.setAttribute('src','/assets/pokeball2.png')
+        ballImg$$.classList.add('b-body__main__poke-galery__box__ball', pokemon.name)
         const divImg$$ = document.createElement('div')
         const img$$ = document.createElement('img')
         img$$.setAttribute('src',pokemon.sprites.versions['generation-v']['black-white'].animated.front_default)
         img$$.classList.add(pokemon.name)
-        divImg$$.classList.add('b-body__main__poke-galery__box__divImg')
+        divImg$$.classList.add('b-body__main__poke-galery__box__divImg', pokemon.name)
         const divP$$ = document.createElement('div')
-        divP$$.classList.add('b-body__main__poke-galery__box__divP')
+        divP$$.classList.add('b-body__main__poke-galery__box__divP', pokemon.name)
         const p$$ = document.createElement('p')
-        p$$.classList.add('b-body__main__poke-galery__box__p')
+        p$$.classList.add('b-body__main__poke-galery__box__p', pokemon.name)
         p$$.textContent = pokemon.name.toUpperCase()
         const figthBtn$$ = document.createElement('button')
         figthBtn$$.textContent ='Figth'
-        figthBtn$$.classList.add('b-body__main__poke-galery__box__btn')
+        figthBtn$$.classList.add('b-body__main__poke-galery__box__btn',pokemon.name)
         const pHP$$ = document.createElement('p')
         pHP$$.textContent ='HP'+ pokemon.stats[0].base_stat
         const pPD$$ = document.createElement('p')
@@ -40,6 +43,7 @@ const printCard = (pokemon) => {
         divP$$.appendChild(pHP$$)
         divP$$.appendChild(pPA$$)
         divP$$.appendChild(pPD$$)
+        divImg$$.appendChild(ballImg$$)
         divBoxGalery$$.appendChild(divImg$$)
         divBoxGalery$$.appendChild(divP$$)
         divBoxGalery$$.appendChild(p$$)
@@ -47,8 +51,7 @@ const printCard = (pokemon) => {
         divGalery$$.appendChild(divBoxGalery$$)
         const img$$Name = img$$.className
         figthBtn$$.addEventListener('click',()=>figth(img$$Name))
-           
-    
+        ballImg$$.addEventListener('click',()=>hunt(img$$Name)) 
   }
 function reload() {
     filterPokemons.splice(0,151)
@@ -130,8 +133,8 @@ function figth (img$$Name){
         figthers.push(element)
         counter--
         divGalery$$.innerHTML=''
-        console.log(counter)
-        console.log(figthers)
+        //console.log(counter)
+        //console.log(figthers)
         for (let index = 0; index < figthers.length; index++) {
         const figther = figthers[index];
         printCard(figther)}
@@ -168,5 +171,38 @@ const init = async ()=>{
   //btn$$.addEventListener('click',()=>searchPokemon(input$$.value,filterPokemons))
   input$$.addEventListener('keyup',()=>searchPokemon(input$$.value,filterPokemons))
   AOS.init();
+} 
+
+const catch$$ = document.querySelector('.b-poke-header__pokeball')
+catch$$.addEventListener('click',()=>showPokeBall())
+function showPokeBall() {const catch1$$ = document.querySelectorAll('.b-body__main__poke-galery__box__ball')
+for (let index = 0; index < catch1$$.length; index++) {
+  const element = catch1$$[index];
+  element.classList.add('b-body__main__poke-galery__box__ball--flex') 
 }  
+}
+let myHuntPokemons=[]
+let HuntPokemons=[]
+let catchCounter=0
+const mycatchCounters$$ = document.querySelector('.b-poke-header__catch')
+const mycatchCounter$$ = document.createElement('p')
+mycatchCounter$$.classList.add('b-poke-header__pokedex__counter')
+mycatchCounters$$.appendChild(mycatchCounter$$)
+
+function hunt(img$$Name) {
+  //let classPokemonName = document.querySelectorAll(ballClass$$)
+  //console.log(classPokemonName);
+  catchCounter++
+  mycatchCounter$$.textContent=catchCounter
+  myHuntPokemons = filterPokemons.filter((filterPokemon)=>filterPokemon.name.toLowerCase().includes(img$$Name.toLowerCase()));
+  for (let index = 0; index < myHuntPokemons.length; index++) {
+    const element = myHuntPokemons[index];
+    HuntPokemons.push(element)
+    console.log(HuntPokemons)
+}
+}
+
 init()
+
+
+
